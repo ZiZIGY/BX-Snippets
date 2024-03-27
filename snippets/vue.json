@@ -1,0 +1,113 @@
+{
+    "Создание реактивной переменной Vue3": {
+		"prefix": "BX.Vue3.ref+",
+		"body": [
+			"/**",
+			" * Returns a reactive reference to a value.",
+			" * @param {any} value - The value to be referenced",
+			" * @returns {import('vue').Ref<any>} A reactive reference to the value",
+			" */",
+			"$1BX.Vue3.ref($value);"
+		],
+		"description": "Создание реактивной переменной Vue3"
+	},
+	"Создание реактивный объект Vue3": {
+		"prefix": "BX.Vue3.reactive+",
+		"body": [
+			"/**",
+			" * Creates a reactive object that can be observed.",
+			" * @param {Object} obj - The object to make reactive",
+			" * @returns {Object} The reactive object",
+			" */",
+			"$1BX.Vue3.reactive({$2})"
+		],
+		"description": "Создание реактивный объект Vue3"
+	},
+	"Создание нового экземпляра приложения Vue 3.": {
+		"prefix": "BX.Vue3.createApp+",
+		"body": [
+			"const $application = BX.Vue3.createApp({",
+			"  /**",
+			"   * This function is a lifecycle hook that is called when the component is first created.",
+			"   * It sets up the component's state by returning an object that contains the component's data.",
+			"   * @returns {object} An object containing the component's data",
+			"   */",
+			"  setup() {",
+			"    /**",
+			"     * Returns a reactive reference to a value.",
+			"     * @param {any} value - The value to be referenced",
+			"     * @returns {import('vue').Ref<any>} A reactive reference to the value",
+			"     */",
+			"    const counter = BX.Vue3.ref(0);",
+			"    /**",
+			"     * Creates a reactive object that can be observed.",
+			"     * @param {Object} obj - The object to make reactive",
+			"     * @returns {Object} The reactive object",
+			"     */",
+			"    const reactiveObj = BX.Vue3.reactive({",
+			"      title: \"Reactive\",",
+			"      data: \"Hello World\",",
+			"    });",
+			"    setInterval(() => {",
+			"      counter.value++;",
+			"      reactiveObj.data = \"Hello World\" + counter.value;",
+			"      console.log(reactiveObj);",
+			"    }, 300);",
+			"    return {",
+			"      counter,",
+			"      reactiveObj,",
+			"    };",
+			"  },",
+			"  template:",
+			"    \"<span>counter: {{ counter }}</span>, <span>data: {{ reactiveObj.data }}</span\",",
+			"});",
+			"/**",
+			" * Mounts the Vue 3 application instance to the DOM element.",
+			" * @param {HTMLElement|String} node - The DOM element to mount Vue 3 application instance",
+			" */",
+			"$application.mount($node);"
+		],
+		"description": "Создание нового экземпляра приложения Vue 3."
+	},
+    "Создание реактивной переменной Vue3 ": {
+		"prefix": "BX.Vue3.ref",
+		"body": [
+			"$1BX.Vue3.ref($value);"
+		],
+		"description": "Создание реактивной переменной Vue3"
+	},
+	"Создание реактивный объект Vue3 ": {
+		"prefix": "BX.Vue3.reactive",
+		"body": [
+			"$1BX.Vue3.reactive({$2})"
+		],
+		"description": "Создание реактивный объект Vue3"
+	},
+	"Создание нового экземпляра приложения Vue 3. ": {
+		"prefix": "BX.Vue3.createApp",
+		"body": [
+			"const $application = BX.Vue3.createApp({",
+			"  setup() {",
+			"    const counter = BX.Vue3.ref(0);",
+			"    const reactiveObj = BX.Vue3.reactive({",
+			"      title: \"Reactive\",",
+			"      data: \"Hello World\",",
+			"    });",
+			"    setInterval(() => {",
+			"      counter.value++;",
+			"      reactiveObj.data = \"Hello World\" + counter.value;",
+			"      console.log(reactiveObj);",
+			"    }, 300);",
+			"    return {",
+			"      counter,",
+			"      reactiveObj,",
+			"    };",
+			"  },",
+			"  template:",
+			"    \"<span>counte r: {{ counter }}</span>, <span>dat a: {{ reactiveObj.data }}</span\",",
+			"});",
+			"$application.mount($node);"
+		],
+		"description": "Создание нового экземпляра приложения Vue 3."
+	}
+}

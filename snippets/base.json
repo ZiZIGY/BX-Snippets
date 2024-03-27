@@ -1,0 +1,646 @@
+{
+  "Вызов аяксовых действий компонента битрикс": {
+    "prefix": "BX.ajax.runComponentAction+",
+    "body": [
+      "/**",
+      "    * This function makes an AJAX request to a component.",
+      "    * @param {string} componentName - The name of the component. Example: 'mysitetemplate:mycomponent",
+      "    * @param {string} action - The name of the function in ajax.php or class.php .",
+      "    * @param {Object} [params] - The parameters for the request.",
+      "    * @param {string} [params.mode] - The mode for the request. Can be either \"class\" or \"ajax\".",
+      "    * @param {Object|FormData} [params.data] - The data for the request.",
+      "    * @param {boolean} [params.json] - A flag indicating whether to send JSON data. In this case, when the request is sent, the Content-Type header",
+      "    * will be set to application/json, and the controllers will be able to access the original JSON, which will make it easier to work with numbers and empty values.",
+      "    * @param {Object} [params.navigation] - The navigation data for the request.",
+      "    * @param {string|Object} [params.analyticsLabel] - The analytics label for the request. It is used as a marker for analytics to indicate popular content.",
+      "    * @param {string} [params.signedParameters] - The signed parameters for the request.",
+      "    * @returns {Promise} - A promise that resolves with the response from the server.",
+      "*/",
+      "BX.ajax.runComponentAction('$componentName' , '$action', {",
+      "    mode: '$mode',",
+      "    data: $data,",
+      "    json: $json,",
+      "    navigation: $navigation,",
+      "    analyticsLabel: $analysticsLabel,",
+      "    signedParameters: $signedParameters",
+      "})"
+    ],
+    "description": "Вызов аяксовых действий компонента битрикс из ajax.php или class.php в зависимости от параметров переданных в mode"
+  },
+  "Событие готовности DOMструктуры": {
+    "prefix": "BX.ready+",
+    "body": [
+      "/** This function is called when the DOM is ready. */",
+      "BX.ready(() => {",
+      "    $1",
+      "})"
+    ],
+    "description": "Событие готовности DOMструктуры"
+  },
+  "Получение DOM элемента по его ID": {
+    "prefix": "BX+",
+    "body": [
+      "/**",
+      " * Returns an element by its ID",
+      " * @param {string} id - The ID of the element to be returned",
+      " * @returns {HTMLElement} The element with the specified ID, or null if no element with the specified ID exists",
+      " */",
+      "$2BX('$id')"
+    ],
+    "description": "Получение DOM элемента по его ID"
+  },
+  "Функция позволяет получить текущее значение стиля property узла node или установить его в значение value. Свойство property указывается в CSS-нотации (например, 'margin-right')": {
+    "prefix": "BX.style+",
+    "body": [
+      "/**",
+      " * Sets a CSS style property for an element or get if the value is missing.",
+      " * @param {HTMLElement} node - The element to modify.",
+      " * @param {string} property - The name of the CSS style property.",
+      " * @param {string} value - The value of the CSS style property.",
+      " */",
+      "BX.style($node, '$property', '$value')"
+    ],
+    "description": "Функция позволяет получить текущее значение стиля property узла node или установить его в значение value. Свойство property указывается в CSS-нотации (например, 'margin-right')"
+  },
+  "Метод который используется для отмены действия браузера по умолчанию, связанного с определенным событием.": {
+    "prefix": "BX.PreventDefault+",
+    "body": [
+      "/**",
+      " * Prevents the default action of an event from occurring.",
+      " * @param {Event} e - The event object.",
+      " */",
+      "BX.PreventDefault($e)"
+    ],
+    "description": "Метод который используется для отмены действия браузера по умолчанию, связанного с определенным событием."
+  },
+  "Функция устанавливает функцию handler в качестве обработчика события event элемента el.": {
+    "prefix": "BX.bind+",
+    "body": [
+      "/**",
+      " * Binds an event handler to an element or a collection of elements.",
+      " * @param {HTMLElement} el - The element to bind the event handler to.",
+      " * @param {String} event - The name of the event to bind the handler to.",
+      " * @param {Function} handler - The function to execute when the event is triggered.",
+      " */",
+      "BX.bind($node, '$event', $handler)"
+    ],
+    "description": "Функция устанавливает функцию handler в качестве обработчика события event элемента el."
+  },
+  "Создает пространство имен в глобальной объекте BX. Если пространство имен уже существует функция ничего не делает.": {
+    "prefix": "BX.namespace+",
+    "body": [
+      "/**",
+      " * Creates a namespace in the global BX object. If the namespace already exists, the function does nothing.",
+      " * @param {string} namespace The name of the namespace, you can make a nested object if you write it through a dot",
+      " * @returns {Object} The namespace object",
+      " */",
+      "BX.namespace($namespace)"
+    ],
+    "description": "Создает пространство имен в глобальной объекте BX. Если пространство имен уже существует функция ничего не делает."
+  },
+  "Функция снимает обработчик handler события event элемента el.": {
+    "prefix": "BX.unbind+",
+    "body": [
+      "/**",
+      " * Removes an event listener from an element or object.",
+      " * @param {HTMLElement} node - The element to remove the listener from.",
+      " * @param {string} eventName - The name of the event to remove the listener for.",
+      " * @param {Function} [callback] - The function to remove as an event listener.",
+      " */",
+      "BX.unbind($node, '$eventName', $callback)"
+    ],
+    "description": "Функция снимает обработчик handler события event элемента el."
+  },
+  "Функция снимает все зарегистрированные обработчики событий с элемента el (или вообще все зарегистрированные обработчики событий, если параметр отсутствует).": {
+    "prefix": "BX.unbindAll+",
+    "body": [
+      "/**",
+      " * Unbinds all event handlers previously bound to an node",
+      " * @param {HTMLElement} node - The node that was bound to the event",
+      " * @param {string} [eventName] - The name of the event to unbind. If not specified, all events will be unbound.",
+      " */",
+      "BX.unbindAll($node, '$eventName')"
+    ],
+    "description": "Функция снимает все зарегистрированные обработчики событий с элемента el (или вообще все зарегистрированные обработчики событий, если параметр отсутствует)."
+  },
+  "Метод эмулирует событие на элементе DOM.": {
+    "prefix": "BX.fireEvent+",
+    "body": [
+      "/**",
+      " * The method emulates an event on the DOM element.",
+      " * @param {HTMLElement} node The node on which to fire the event.",
+      " * @param {string} eventName The name of the event to fire.",
+      " */",
+      "BX.fireEvent($node, '$eventName')"
+    ],
+    "description": "Метод эмулирует событие на элементе DOM."
+  },
+  "Функция устанавливает обработчик handler события eventName на дочерние элементы узла node, удовлетворяющих условиям isTarget. Нюансом метода является независимость от изменений содержимого node: физически обработчик вешается на сам узел node и принимает событие в момент его всплывания от дочерних элементов.": {
+    "prefix": "BX.bindDelegate+",
+    "body": [
+      "/**",
+      " * Binds an event handler to all nodes that match a specific selector and bubble up an event to the document.",
+      " * @param {HTMLElement} node - The node to start searching from.",
+      " * @param {string} eventName - The name of the event to listen for.",
+      " * @param {Object} isTarget - An object that contains one or more properties that define which nodes match the selector.",
+      " * @param {Function} handler - The function to execute when an event is triggered.",
+      " * @returns {Function} A function that can be used to remove the event listener.",
+      " */",
+      "BX.bindDelegate($node, \"$eventName\", $isTarget, $handler)"
+    ],
+    "description": "Функция устанавливает обработчик handler события eventName на дочерние элементы узла node, удовлетворяющих условиям isTarget. Нюансом метода является независимость от изменений содержимого node: физически обработчик вешается на сам узел node и принимает событие в момент его всплывания от дочерних элементов."
+  },
+  "Обрабатывает HTML-код и извлекает скрипты и стили.": {
+    "prefix": "BX.processHTML+",
+    "body": [
+      "/**",
+      " * Processes HTML code and extracts scripts and styles.",
+      " * @param {string} data HTML code.",
+      " * @param {boolean} [scriptsRunFirst=false] Indicates whether scripts should be executed before or after the HTML code is inserted into the page.",
+      " * @returns {{HTML: string, SCRIPT: Array, STYLE: Array}} An object containing the processed HTML code, scripts, and styles.",
+      " */",
+      "BX.processHTML($data, $true)"
+    ],
+    "description": "Обрабатывает HTML-код и извлекает скрипты и стили."
+  },
+  "Возвращает значение bitrix_sessid из файла cookie": {
+    "prefix": "BX.bitrix_sessid+",
+    "body": [
+      "/**",
+      " * Returns the value of the bitrix_sessid from cookie.",
+      " * @return {string} The value of the bitrix_sessid cookie.",
+      " */",
+      "BX.bitrix_sessid()"
+    ],
+    "description": "Возвращает значение bitrix_sessid из файла cookie"
+  },
+  "Создает DocumentFragment из заданного массива узлов": {
+    "prefix": "BX.createFragment+",
+    "body": [
+      "/**",
+      " * Creates a DocumentFragment from the given array of nodes.",
+      " * @param {Array} array - An array of HTMLElements to be added to the DocumentFragment.",
+      " * @returns {DocumentFragment} A DocumentFragment object containing the given nodes.",
+      " */",
+      "BX.createFragment($array)"
+    ],
+    "description": "Создает DocumentFragment из заданного массива узлов"
+  },
+  "Отключает выделение текста для указанного узла": {
+    "prefix": "BX.setUnselectable+",
+    "body": [
+      "/**",
+      " * Disables text selection for the specified node.",
+      " * @param {HTMLElement} node - The node to disable selection for.",
+      " */",
+      "BX.setUnselectable($node)"
+    ],
+    "description": "Отключает выделение текста для указанного узла"
+  },
+  "Включает выделение текста для указанного узла": {
+    "prefix": "BX.setSelectable+",
+    "body": [
+      "/**",
+      " * Enable text selection for the specified node.",
+      " * @param {HTMLElement} node - The node to enable selection for.",
+      " */",
+      "BX.setSelectable($node)"
+    ],
+    "description": "Включает выделение текста для указанного узла"
+  },
+  " Фокусируется на указанном элементе": {
+    "prefix": "BX.focus+",
+    "body": [
+      "/**",
+      " * Focuses on the specified element.",
+      " * @param {HTMLElement} node - The element to focus on.",
+      " * @returns {boolean} - Returns true if the focus was set successfully, otherwise false.",
+      " */",
+      "BX.focus($node)"
+    ],
+    "description": " Фокусируется на указанном элементе"
+  },
+  "Возвращает первого ребенка родителя": {
+    "prefix": "BX.firstChild+",
+    "body": [
+      "/**",
+      " * Returns the first child of the given element.",
+      " * @param {HTMLElement} node - The element whose first child is to be returned.",
+      " * @returns {?HTMLElement} The first child of the given element, or null if the element has no children.",
+      " */",
+      "BX.firstChild($node)"
+    ],
+    "description": "Возвращает первого ребенка родителя"
+  },
+  "Возвращает последний элемент родителя": {
+    "prefix": "BX.lastChild+",
+    "body": [
+      "/**",
+      " * Returns the last child of the given element.",
+      " * @param {HTMLElement} node - The element to search.",
+      " * @returns {?HTMLElement} The last child of the element, or null if the element has no children.",
+      " */",
+      "BX.lastChild($node)"
+    ],
+    "description": "Возвращает последний элемент родителя"
+  },
+  "Возвращает предыдущий соседний элемент": {
+    "prefix": "BX.previousSibling+",
+    "body": [
+      "/**",
+      " * Returns the previous sibling of the specified element.",
+      " * @param {HTMLElement} node - The element whose previous sibling is to be returned.",
+      " * @returns {Element|null} The previous sibling of the specified element, or null if there is no previous sibling.",
+      " */",
+      "BX.previousSibling($node)"
+    ],
+    "description": "Возвращает предыдущий соседний элемент"
+  },
+  "Создание узла DOM-структуры. Допускает при создании узла подвеску на него каких-то событий.": {
+    "prefix": "BX.create+",
+    "body": [
+      "/**",
+      " * Creates and returns a new instance of the specified HTML element.",
+      " * @param {string} tag - The tag name of the element to create.",
+      " * @param {object} [options] - An object that contains one or more of the following properties:",
+      " * @param {string} [options.tag] - The tag name of the element to create.",
+      " * @param {object} [options.props] - An object that contains the element properties.",
+      " * @param {object} [options.style] - An object that contains the element styles.",
+      " * @param {object} [options.events] - An object that contains the event handlers for the element.",
+      " * @param {object} [options.attrs] - An object that contains the element attributes.",
+      " * @param {object} [options.dataset] - An object that contains list of data attributes.",
+      " * @param {Array} [options.children] - An array of child elements.",
+      " * @param {string} [options.text] - The text content of the element.",
+      " * @param {HTMLElement|string} [options.html] - The HTML content of the element.",
+      " * @param {?HTMLElement} context - The DOM context in which to create the element.",
+      " * @returns {HTMLElement} The created element.",
+      " */",
+      "BX.create($tag, $options, $context)"
+    ],
+    "description": "Создание узла DOM-структуры. Допускает при создании узла подвеску на него каких-то событий."
+  },
+  "Вызов аяксовых действий компонента битрикс ": {
+    "prefix": "BX.ajax.runComponentAction",
+    "body": [
+      "BX.ajax.runComponentAction('$componentName', '$action', {",
+      "    mode: '$mode',",
+      "    data: $data,",
+      "    json: $json,",
+      "    navigation: $navigation,",
+      "    analyticsLabel: $analysticsLabel,",
+      "    signedParameters: $signedParameters",
+      "})"
+    ],
+    "description": "Вызов аяксовых действий компонента битрикс из ajax.php или class.php в зависимости от параметров переданных в mode"
+  },
+  "Событие готовности DOMструктуры ": {
+    "prefix": "BX.ready",
+    "body": ["BX.ready(() => {", "    $1", "})"],
+    "description": "Событие готовности DOMструктуры"
+  },
+  "Получение DOM элемента по его ID ": {
+    "prefix": "BX",
+    "body": ["BX('$id')"],
+    "description": "Получение DOM элемента по его ID"
+  },
+  "Функция позволяет получить текущее значение стиля property узла node или установить его в значение value. Свойство property указывается в CSS-нотации (например, 'margin-right') ": {
+    "prefix": "BX.style",
+    "body": ["BX.style($node, '$property', '$value')"],
+    "description": "Функция позволяет получить текущее значение стиля property узла node или установить его в значение value. Свойство property указывается в CSS-нотации (например, 'margin-right')"
+  },
+  "Метод который используется для отмены действия браузера по умолчанию, связанного с определенным событием. ": {
+    "prefix": "BX.PreventDefault",
+    "body": ["BX.PreventDefault($e)"],
+    "description": "Метод который используется для отмены действия браузера по умолчанию, связанного с определенным событием."
+  },
+  "Функция устанавливает функцию handler в качестве обработчика события event элемента el. ": {
+    "prefix": "BX.bind",
+    "body": ["BX.bind($node, '$event', $handler)"],
+    "description": "Функция устанавливает функцию handler в качестве обработчика события event элемента el."
+  },
+  "Создает пространство имен в глобальной объекте BX. Если пространство имен уже существует функция ничего не делает. ": {
+    "prefix": "BX.namespace",
+    "body": ["BX.namespace($namespace)"],
+    "description": "Создает пространство имен в глобальной объекте BX. Если пространство имен уже существует функция ничего не делает."
+  },
+  "Функция снимает обработчик handler события event элемента el. ": {
+    "prefix": "BX.unbind",
+    "body": ["BX.unbind($node, '$eventName', $callback)"],
+    "description": "Функция снимает обработчик handler события event элемента el."
+  },
+  "Функция снимает все зарегистрированные обработчики событий с элемента el (или вообще все зарегистрированные обработчики событий, если параметр отсутствует). ": {
+    "prefix": "BX.unbindAll",
+    "body": ["BX.unbindAll($node, '$eventName')"],
+    "description": "Функция снимает все зарегистрированные обработчики событий с элемента el (или вообще все зарегистрированные обработчики событий, если параметр отсутствует)."
+  },
+  "Метод эмулирует событие на элементе DOM. ": {
+    "prefix": "BX.fireEvent",
+    "body": ["BX.fireEvent($node, '$eventName')"],
+    "description": "Метод эмулирует событие на элементе DOM."
+  },
+  "Функция устанавливает обработчик handler события eventName на дочерние элементы узла node, удовлетворяющих условиям isTarget. Нюансом метода является независимость от изменений содержимого node: физически обработчик вешается на сам узел node и принимает событие в момент его всплывания от дочерних элементов. ": {
+    "prefix": "BX.bindDelegate",
+    "body": ["BX.bindDelegate($node, \"$eventName\", $isTarget, $handler)"],
+    "description": "Функция устанавливает обработчик handler события eventName на дочерние элементы узла node, удовлетворяющих условиям isTarget. Нюансом метода является независимость от изменений содержимого node: физически обработчик вешается на сам узел node и принимает событие в момент его всплывания от дочерних элементов."
+  },
+  "Обрабатывает HTML-код и извлекает скрипты и стили. ": {
+    "prefix": "BX.processHTML",
+    "body": ["BX.processHTML($data, $true)"],
+    "description": "Обрабатывает HTML-код и извлекает скрипты и стили."
+  },
+  "Возвращает значение bitrix_sessid из файла cookie ": {
+    "prefix": "BX.bitrix_sessid",
+    "body": ["BX.bitrix_sessid()"],
+    "description": "Возвращает значение bitrix_sessid из файла cookie"
+  },
+  "Создает DocumentFragment из заданного массива узлов ": {
+    "prefix": "BX.createFragment",
+    "body": ["BX.createFragment($array)"],
+    "description": "Создает DocumentFragment из заданного массива узлов"
+  },
+  "Отключает выделение текста для указанного узла ": {
+    "prefix": "BX.setUnselectable",
+    "body": ["BX.setUnselectable($node)"],
+    "description": "Отключает выделение текста для указанного узла"
+  },
+  "Включает выделение текста для указанного узла ": {
+    "prefix": "BX.setSelectable",
+    "body": ["BX.setSelectable($node)"],
+    "description": "Включает выделение текста для указанного узла"
+  },
+  " Фокусируется на указанном элементе ": {
+    "prefix": "BX.focus",
+    "body": ["BX.focus($node)"],
+    "description": " Фокусируется на указанном элементе"
+  },
+  "Возвращает первого ребенка родителя ": {
+    "prefix": "BX.firstChild",
+    "body": ["BX.firstChild($node)"],
+    "description": "Возвращает первого ребенка родителя"
+  },
+  "Возвращает последний элемент родителя ": {
+    "prefix": "BX.lastChild",
+    "body": ["BX.lastChild($node)"],
+    "description": "Возвращает последний элемент родителя"
+  },
+  "Возвращает предыдущий соседний элемент ": {
+    "prefix": "BX.previousSibling",
+    "body": ["BX.previousSibling($node)"],
+    "description": "Возвращает предыдущий соседний элемент"
+  },
+  "Создание узла DOM-структуры. Допускает при создании узла подвеску на него каких-то событий. ": {
+    "prefix": "BX.create",
+    "body": ["BX.create($tag, $options, $context)"],
+    "description": "Создание узла DOM-структуры. Допускает при создании узла подвеску на него каких-то событий."
+  },
+  "Устанавливает прозрачность элемента.": {
+    "prefix": "BX.setOpacity+",
+    "body": [
+      "/**",
+      " * Sets the opacity of an element.",
+      " * @param {HTMLElement} node -  The element to modify.",
+      " * @param {number} opacity - The opacity value, between 0 and 1.",
+      " */",
+      "BX.setOpacity($node, $opacity)"
+    ],
+    "description": "Устанавливает прозрачность элемента."
+  },
+  "Устанавливает прозрачность элемента. ": {
+    "prefix": "BX.setOpacity",
+    "body": ["BX.setOpacity($node, $opacity)"],
+    "description": "Устанавливает прозрачность элемента."
+  },
+  "Возвращает следующий родственный элемент указанного элемента или null, если следующего родственного элемента нет.": {
+    "prefix": "BX.nextSibling+",
+    "body": [
+      "/**",
+      " * Returns the next sibling of the specified element, or null if there is no next sibling.",
+      " * @param {HTMLElement} $node - The element whose next sibling is to be retrieved.",
+      " * @returns {HTMLElement|null} The next sibling of the specified element, or null if there is no next sibling.",
+      " */",
+      "BX.nextSibling($node)"
+    ],
+    "description": "Возвращает следующий родственный элемент указанного элемента или null, если следующего родственного элемента нет."
+  },
+  "Возвращает следующий родственный элемент указанного элемента или null, если следующего родственного элемента нет. ": {
+    "prefix": "BX.nextSibling",
+    "body": ["BX.nextSibling($node)"],
+    "description": "Возвращает следующий родственный элемент указанного элемента или null, если следующего родственного элемента нет."
+  },
+  "Возвращает false": {
+    "prefix": "BX.false+",
+    "body": [
+      "/**",
+      " * Returns false.",
+      " * @returns {boolean} false.",
+      " */",
+      "BX.False()"
+    ],
+    "description": "Возвращает false"
+  },
+  "Возвращает false ": {
+    "prefix": "BX.false",
+    "body": ["BX.False()"],
+    "description": "Возвращает false"
+  },
+  "Показывает элемент.": {
+    "prefix": "BX.show+",
+    "body": [
+      "/**",
+      " * Shows or hides an element.",
+      " * @param {HTMLElement} node - The element to show or hide.",
+      " */",
+      "BX.show($node)"
+    ],
+    "description": "Показывает элемент"
+  },
+  "Показывает элемент. ": {
+    "prefix": "BX.show",
+    "body": ["BX.show($node)"],
+    "description": "Показывает элемент"
+  },
+  "Скрывает элемент.": {
+    "prefix": "BX.hide+",
+    "body": [
+      "/**",
+      " * Hides an element.",
+      " * @param {HTMLElement} node - The element to hide.",
+      " */",
+      "BX.hide($node)"
+    ],
+    "description": "Скрывает элемент"
+  },
+  "Скрывает элемент. ": {
+    "prefix": "BX.hide",
+    "body": ["BX.hide($node)"],
+    "description": "Скрывает элемент"
+  },
+  "Переключает видимость элемента.": {
+    "prefix": "BX.toggle+",
+    "body": [
+      "/**",
+      " * Toggle element display.",
+      " * @param {HTMLElement} node - The element to toggle.",
+      " */",
+      "BX.toggle($node)"
+    ],
+    "description": "Переключает видимость элемента"
+  },
+  "Переключает видимость элемента. ": {
+    "prefix": "BX.toggle",
+    "body": ["BX.toggle($node)"],
+    "description": "Переключает видимость элемента"
+  },
+  "Очищает содержимое элемента.": {
+    "prefix": "BX.cleanNode+",
+    "body": [
+      "/**",
+      " * Cleans the specified node and its descendants.",
+      " * @param {HTMLElement} node - The node to clean.",
+      " * @param {boolean} [removeSelf=false] - Indicates whether to remove the node itself.",
+      " */",
+      "BX.cleanNode($node, $false);"
+    ],
+    "description": "Очищает содержимое элемента"
+  },
+  "Очищает содержимое элемента. ": {
+    "prefix": "BX.cleanNode",
+    "body": ["BX.cleanNode($node, $false);"],
+    "description": "Очищает содержимое элемента"
+  },
+  "Добавляет класс элементу.": {
+    "prefix": "BX.addClass+",
+    "body": [
+      "/**",
+      " * Adds a class to the specified element.",
+      " * @param {HTMLElement} node - The element to which the class is to be added.",
+      " * @param {string} className - The name of the class to be added.",
+      " */",
+      "BX.addClass($node, $className);"
+    ],
+    "description": "Добавляет класс элементу"
+  },
+  "Добавляет класс элементу. ": {
+    "prefix": "BX.addClass",
+    "body": ["BX.addClass($node, $className);"],
+    "description": "Добавляет класс элементу"
+  },
+  "Удаляет класс у элемента.": {
+    "prefix": "BX.removeClass+",
+    "body": [
+      "/**",
+      " * Removes a class from the specified element.",
+      " * @param {HTMLElement} node - The element to which the class is to be removed.",
+      " * @param {string} className - The name of the class to remove.",
+      " */",
+      "BX.removeClass($node, $className);"
+    ],
+    "description": "Удаляет класс у элемента"
+  },
+  "Удаляет класс у элемента. ": {
+    "prefix": "BX.removeClass",
+    "body": ["BX.removeClass($node, $className);"],
+    "description": "Удаляет класс у элемента"
+  },
+  "Проверяет если ли класс у выбранного элемента.": {
+    "prefix": "BX.hasClass+",
+    "body": [
+      "/**",
+      " * Returns whether the specified node has the specified class.",
+      " * @param {HTMLElement} node - The node to check.",
+      " * @param {string} className - The class name to check for.",
+      " * @returns {boolean} `true` if the node has the specified class, `false` otherwise.",
+      " */",
+      "BX.hasClass($node, $className);"
+    ],
+    "description": "Проверяет если ли класс у выбранного элемента"
+  },
+  "Проверяет если ли класс у выбранного элемента. ": {
+    "prefix": "BX.hasClass",
+    "body": ["BX.hasClass($node, $className);"],
+    "description": "Проверяет если ли класс у выбранного элемента"
+  },
+  "Удаляет элемент из DOM дерева.": {
+    "prefix": "BX.remove+",
+    "body": [
+      "/**",
+      " * Removes the specified node from the DOM tree.",
+      " * @param {HTMLElement} node The node to remove.",
+      " */",
+      "BX.remove($node)"
+    ],
+    "description": "Удаляет элемент из DOM дерева."
+  },
+  "Удаляет элемент из DOM дерева. ": {
+    "prefix": "BX.remove",
+    "body": ["BX.remove($node)"],
+    "description": "Удаляет элемент из DOM дерева."
+  },
+  "Проверяет скрыт ли элемент.": {
+    "prefix": "BX.isNodeHidden+",
+    "body": [
+      "/**",
+      " * Checks if the specified node is hidden.",
+      " * @param {HTMLElement} node The node to check.",
+      " * @returns {boolean} `true` if the node is hidden, `false` otherwise.",
+      " */",
+      "BX.isNodeHidden($node)"
+    ],
+    "description": "Проверяет скрыт ли элемент."
+  },
+  "Проверяет скрыт ли элемент. ": {
+    "prefix": "BX.isNodeHidden",
+    "body": ["BX.isNodeHidden($node)"],
+    "description": "Проверяет скрыт ли элемент."
+  },
+  "Скролит экран до элемента.": {
+    "prefix": "BX.scrollToNode+",
+    "body": [
+      "/**",
+      " * Scrolls the page to make the specified DOM node visible.",
+      " * @param {HTMLElement} node - The element to scroll to.",
+      " */",
+      "BX.scrollToNode($node)"
+    ],
+    "description": "Скролит экран до элемента"
+  },
+  "Скролит экран до элемента. ": {
+    "prefix": "BX.scrollToNode",
+    "body": ["BX.scrollToNode($node)"],
+    "description": "Скролит экран до элемента"
+  },
+  "Возвращает или задает высоту элемента.": {
+    "prefix": "BX.height+",
+    "body": [
+      "/**,",
+      " * Sets height for an element or get if the value is missing.,",
+      " * @param {HTMLElement} node - The element to modify.,",
+      " * @param {number} value - The value of the height.,",
+      " */",
+      "BX.height($node, $value);"
+    ],
+    "description": "Возвращает или задает высоту элемента"
+  },
+  "Возвращает или задает высоту элемента. ": {
+    "prefix": "BX.height",
+    "body": ["BX.height($node, $value);"],
+    "description": "Возвращает или задает высоту элемента"
+  },
+  "Возвращает или задает ширину элемента.": {
+    "prefix": "BX.height+",
+    "body": [
+      "/**,",
+      " * Sets width for an element or get if the value is missing.,",
+      " * @param {HTMLElement} node - The element to modify.,",
+      " * @param {number} value - The value of the width.,",
+      " */",
+      "BX.width($node, $value);"
+    ],
+    "description": "Возвращает или задает ширину элемента"
+  },
+  "Возвращает или задает ширину элемента. ": {
+    "prefix": "BX.width",
+    "body": ["BX.width($node, $value);"],
+    "description": "Возвращает или задает ширину элемента"
+  }
+}

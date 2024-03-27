@@ -1,0 +1,51 @@
+{
+  "name": "bx-snippets",
+  "displayName": "BX Snippets",
+  "description": "Сниппеты для комфортной работы с JS библиотекой Bitrix - BX",
+  "publisher": "ZiZIGY",
+  "icon": "./logo.png",
+  "version": "1.0.3",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZiZIGY/BX-Snippets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZiZIGY/BX-Snippets/issues"
+  },
+  "homepage": "https://github.com/ZiZIGY/BX-Snippets#readme",
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/base.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/vue.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
