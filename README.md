@@ -2,7 +2,7 @@
 Сниппеты для библиотеки Bitrix - BX. Устанавливаются глобально и не требуют установки в рабочую область.
 
 # Демо
-![Alt Text](https://github.com/ZiZIGY/BX-Snippets/raw/main/demo.gif)
+![Alt Text](https://github.com/ZiZIGY/BX-Snippets/demo.gif)
 
 # Использование
 Просто начните печатать BX в javascript файле, и нажмите Enter.
