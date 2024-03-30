@@ -3,8 +3,8 @@
   "displayName": "BX Snippets",
   "description": "Сниппеты для комфортной работы с JS библиотекой Bitrix - BX",
   "publisher": "ZiZIGY",
-  "icon": "./logo.png",
-  "version": "1.0.3",
+  "icon": "logo.png",
+  "version": "1.0.6",
   "engines": {
     "vscode": "^1.87.0"
   },
