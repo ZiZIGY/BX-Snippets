@@ -8,6 +8,7 @@
       "    * @param {string} action - The name of the function in ajax.php or class.php .",
       "    * @param {Object} [params] - The parameters for the request.",
       "    * @param {string} [params.mode] - The mode for the request. Can be either \"class\" or \"ajax\".",
+      "    * @param {string} [params.method] - default POST",
       "    * @param {Object|FormData} [params.data] - The data for the request.",
       "    * @param {boolean} [params.json] - A flag indicating whether to send JSON data. In this case, when the request is sent, the Content-Type header",
       "    * will be set to application/json, and the controllers will be able to access the original JSON, which will make it easier to work with numbers and empty values.",
@@ -269,7 +270,7 @@
       " * @param {object} [options.events] - An object that contains the event handlers for the element.",
       " * @param {object} [options.attrs] - An object that contains the element attributes.",
       " * @param {object} [options.dataset] - An object that contains list of data attributes.",
-      " * @param {Array} [options.children] - An array of child elements.",
+      " * @param {Array<HTMLElement>} [options.children] - An array of child elements.",
       " * @param {string} [options.text] - The text content of the element.",
       " * @param {HTMLElement|string} [options.html] - The HTML content of the element.",
       " * @param {?HTMLElement} context - The DOM context in which to create the element.",
@@ -499,13 +500,13 @@
       " * @param {HTMLElement} node - The node to clean.",
       " * @param {boolean} [removeSelf=false] - Indicates whether to remove the node itself.",
       " */",
-      "BX.cleanNode($node, $false);"
+      "BX.cleanNode($node, $false)"
     ],
     "description": "Очищает содержимое элемента"
   },
   "Очищает содержимое элемента. ": {
     "prefix": "BX.cleanNode",
-    "body": ["BX.cleanNode($node, $false);"],
+    "body": ["BX.cleanNode($node, $false)"],
     "description": "Очищает содержимое элемента"
   },
   "Добавляет класс элементу.": {
@@ -516,13 +517,13 @@
       " * @param {HTMLElement} node - The element to which the class is to be added.",
       " * @param {string} className - The name of the class to be added.",
       " */",
-      "BX.addClass($node, $className);"
+      "BX.addClass($node, $className)"
     ],
     "description": "Добавляет класс элементу"
   },
   "Добавляет класс элементу. ": {
     "prefix": "BX.addClass",
-    "body": ["BX.addClass($node, $className);"],
+    "body": ["BX.addClass($node, $className)"],
     "description": "Добавляет класс элементу"
   },
   "Удаляет класс у элемента.": {
@@ -533,13 +534,13 @@
       " * @param {HTMLElement} node - The element to which the class is to be removed.",
       " * @param {string} className - The name of the class to remove.",
       " */",
-      "BX.removeClass($node, $className);"
+      "BX.removeClass($node, $className)"
     ],
     "description": "Удаляет класс у элемента"
   },
   "Удаляет класс у элемента. ": {
     "prefix": "BX.removeClass",
-    "body": ["BX.removeClass($node, $className);"],
+    "body": ["BX.removeClass($node, $className)"],
     "description": "Удаляет класс у элемента"
   },
   "Проверяет если ли класс у выбранного элемента.": {
@@ -551,13 +552,13 @@
       " * @param {string} className - The class name to check for.",
       " * @returns {boolean} `true` if the node has the specified class, `false` otherwise.",
       " */",
-      "BX.hasClass($node, $className);"
+      "BX.hasClass($node, $className)"
     ],
     "description": "Проверяет если ли класс у выбранного элемента"
   },
   "Проверяет если ли класс у выбранного элемента. ": {
     "prefix": "BX.hasClass",
-    "body": ["BX.hasClass($node, $className);"],
+    "body": ["BX.hasClass($node, $className)"],
     "description": "Проверяет если ли класс у выбранного элемента"
   },
   "Удаляет элемент из DOM дерева.": {
@@ -617,31 +618,870 @@
       " * @param {HTMLElement} node - The element to modify.,",
       " * @param {number} value - The value of the height.,",
       " */",
-      "BX.height($node, $value);"
+      "BX.height($node, $value)"
     ],
     "description": "Возвращает или задает высоту элемента"
   },
   "Возвращает или задает высоту элемента. ": {
     "prefix": "BX.height",
-    "body": ["BX.height($node, $value);"],
+    "body": ["BX.height($node, $value)"],
     "description": "Возвращает или задает высоту элемента"
   },
   "Возвращает или задает ширину элемента.": {
-    "prefix": "BX.height+",
+    "prefix": "BX.width+",
     "body": [
       "/**,",
       " * Sets width for an element or get if the value is missing.,",
       " * @param {HTMLElement} node - The element to modify.,",
       " * @param {number} value - The value of the width.,",
       " */",
-      "BX.width($node, $value);"
+      "BX.width($node, $value)"
     ],
     "description": "Возвращает или задает ширину элемента"
   },
   "Возвращает или задает ширину элемента. ": {
     "prefix": "BX.width",
-    "body": ["BX.width($node, $value);"],
+    "body": ["BX.width($node, $value)"],
     "description": "Возвращает или задает ширину элемента"
+  },
+  "Получение абсолютной позиции элемента на экране.": {
+    "prefix": "BX.pos+",
+    "body": [
+      "/**",
+      " * Positions the given DOMNode relative to another DOMNode.",
+      " *",
+      " * @param {DOMNode} node - The DOMNode to be positioned.",
+      " * @param {boolean} bRelative - A boolean value indicating whether the positioning is relative.",
+      " */",
+      "BX.pos($node, $bRelative)"
+    ],
+    "description": "Получение абсолютной позиции элемента на экране."
+  },
+  "Получение абсолютной позиции элемента на экране. ": {
+    "prefix": "BX.pos",
+    "body": ["BX.pos($node, $bRelative)"],
+    "description": "Получение абсолютной позиции элемента на экране."
+  },
+  "Является ли аргумент строкой.": {
+    "prefix": "BX.type.isString+",
+    "body": [
+      "/**",
+      " * Checks if the given value is a string.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a string, false otherwise.",
+      " */",
+      "BX.type.isString($value)"
+    ],
+    "description": "Является ли аргумент строкой."
+  },
+  "Является ли аргумент строкой. ": {
+    "prefix": "BX.type.isString",
+    "body": ["BX.type.isString($value)"],
+    "description": "Является ли аргумент строкой."
+  },
+  "Является ли аргумент непустой строкой.": {
+    "prefix": "BX.type.isNotEmptyString+",
+    "body": [
+      "/**",
+      " * Checks if the given string is not empty.",
+      " *",
+      " * @param {*} value The string to check.",
+      " * @returns {boolean} True if the string is not empty, false otherwise.",
+      " */",
+      "BX.type.isNotEmptyString($value)"
+    ],
+    "description": "Является ли аргумент непустой строкой."
+  },
+  "Является ли аргумент непустой строкой. ": {
+    "prefix": "BX.type.isNotEmptyString",
+    "body": ["BX.type.isNotEmptyString($value)"],
+    "description": "Является ли аргумент непустой строкой."
+  },
+  "Является ли аргумент булевой переменной.": {
+    "prefix": "BX.type.isBoolean+",
+    "body": [
+      " /**",
+      " * Checks if the given value is a boolean.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a boolean, false otherwise.",
+      " */",
+      "BX.type.isBoolean($value)"
+    ],
+    "description": "Является ли аргумент булевой переменной."
+  },
+  "Является ли аргумент булевой переменной. ": {
+    "prefix": "BX.type.isBoolean",
+    "body": ["BX.type.isBoolean($value)"],
+    "description": "Является ли аргумент булевой переменной."
+  },
+  "Является ли аргумент числом.": {
+    "prefix": "BX.type.isNumber+",
+    "body": [
+      "/**",
+      " * Checks if the given value is a number.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a number, false otherwise.",
+      " */",
+      "BX.type.isNumber($value)"
+    ],
+    "description": "Является ли аргумент числом."
+  },
+  "Является ли аргумент числом. ": {
+    "prefix": "BX.type.isNumber",
+    "body": ["BX.type.isNumber($value)"],
+    "description": "Является ли аргумент числом."
+  },
+  "Является ли аргумент функцией.": {
+    "prefix": "BX.type.isFunction+",
+    "body": [
+      "/**",
+      " * Checks if the given value is a function.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a function, false otherwise.",
+      " */",
+      "BX.type.isFunction($value)"
+    ],
+    "description": "Является ли аргумент функцией."
+  },
+  "Является ли аргумент функцией": {
+    "prefix": "BX.type.isFunction",
+    "body": ["BX.type.isFunction($value)"],
+    "description": "Является ли аргумент функцией."
+  },
+  "Является ли аргумент узлом DOM-структуры.": {
+    "prefix": "BX.type.isDomNode+",
+    "body": [
+      "/**",
+      " * Checks if the given value is a DOM node.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a DOM node, false otherwise.",
+      " */",
+      "BX.type.isDomNode($value)"
+    ],
+    "description": "Является ли аргумент узлом DOM-структуры."
+  },
+  "Является ли аргумент узлом DOM-структуры. ": {
+    "prefix": "BX.type.isDomNode",
+    "body": ["BX.type.isDomNode($value)"],
+    "description": "Является ли аргумент узлом DOM-структуры."
+  },
+  "Является ли аргумент элементом DOM-структуры (например, не document).": {
+    "prefix": "BX.type.isElementNode+",
+    "body": [
+      "/**",
+      " * Checks if the given value is an element node.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is an element node, false otherwise.",
+      " */",
+      "BX.type.isElementNode($value)"
+    ],
+    "description": "Является ли аргумент элементом DOM-структуры (например, не document)."
+  },
+  "Является ли аргумент элементом DOM-структуры (например, не document). ": {
+    "prefix": "BX.type.isElementNode",
+    "body": ["BX.type.isElementNode($value)"],
+    "description": "Является ли аргумент элементом DOM-структуры (например, не document)."
+  },
+  "Является ли аргумент массивом.": {
+    "prefix": "BX.type.isArray+",
+    "body": [
+      "/**",
+      " * Checks if the given value is an array.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is an array, false otherwise.",
+      " */",
+      "BX.type.isArray($value)"
+    ],
+    "description": "Является ли аргумент массивом."
+  },
+  "Является ли аргумент массивом. ": {
+    "prefix": "BX.type.isArray",
+    "body": ["BX.type.isArray($value)"],
+    "description": "Является ли аргумент массивом."
+  },
+  "Является ли аргумент экземпляром класса Date.": {
+    "prefix": "BX.type.isDate+",
+    "body": [
+      "/**",
+      " * Checks if the given value is a Date object.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a Date object, false otherwise.",
+      " */",
+      "BX.type.isDate($value)"
+    ],
+    "description": "Является ли аргумент экземпляром класса Date."
+  },
+  "Является ли аргумент экземпляром класса Date. ": {
+    "prefix": "BX.type.isDate",
+    "body": ["BX.type.isDate($value)"],
+    "description": "Является ли аргумент экземпляром класса Date."
+  },
+  "Является ли аргумент заполненной строкой.": {
+    "prefix": "BX.Type.isStringFilled+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a filled string.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a filled string, false otherwise.",
+      " */",
+      "BX.Type.isStringFilled($value)"
+    ],
+    "description": "Является ли аргумент заполненной строкой."
+  },
+  "Является ли аргумент заполненной строкой. ": {
+    "prefix": "BX.Type.isStringFilled",
+    "body": ["BX.Type.isStringFilled($value)"],
+    "description": "Является ли аргумент заполненной строкой."
+  },
+  "Является ли аргумент объектом.": {
+    "prefix": "BX.Type.isObject+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is an object.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is an object, false otherwise.",
+      " */",
+      "BX.Type.isObject($value)"
+    ],
+    "description": "Является ли аргумент объектом."
+  },
+  "Является ли аргумент объектом. ": {
+    "prefix": "BX.Type.isObject",
+    "body": ["BX.Type.isObject($value)"],
+    "description": "Является ли аргумент объектом."
+  },
+  "Проверяет, является ли предоставленное значение объектно-подобным.": {
+    "prefix": "BX.Type.isObject+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is an object.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is an object, false otherwise.",
+      " */",
+      "BX.Type.isObject($value)"
+    ],
+    "description": "Проверяет, является ли предоставленное значение объектно-подобным."
+  },
+  "Проверяет, является ли предоставленное значение объектно-подобным. ": {
+    "prefix": "BX.Type.isObject",
+    "body": ["BX.Type.isObject($value)"],
+    "description": "Проверяет, является ли предоставленное значение объектно-подобным."
+  },
+  "Проверяет, является ли предоставленное значение простым объектом.": {
+    "prefix": "BX.Type.isPlainObject+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a plain object.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a plain object, false otherwise.",
+      " */",
+      "BX.Type.isPlainObject($value)"
+    ],
+    "description": "Проверяет, является ли предоставленное значение простым объектом."
+  },
+  "Проверяет, является ли предоставленное значение простым объектом. ": {
+    "prefix": "BX.Type.isPlainObject",
+    "body": ["BX.Type.isPlainObject($value)"],
+    "description": "Проверяет, является ли предоставленное значение простым объектом."
+  },
+  "Проверяет, является ли указанное значение целым числом.": {
+    "prefix": "BX.Type.isInteger+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is an integer.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is an integer, false otherwise.",
+      " */",
+      "BX.Type.isInteger($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение целым числом."
+  },
+  "Проверяет, является ли указанное значение целым числом. ": {
+    "prefix": "BX.Type.isInteger",
+    "body": ["BX.Type.isInteger($value)"],
+    "description": "Проверяет, является ли указанное значение целым числом."
+  },
+  "Проверяет, является ли указанное значение плавающим.": {
+    "prefix": "BX.Type.isFloat+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a float.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a float, false otherwise.",
+      " */",
+      "BX.Type.isFloat($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение плавающим."
+  },
+  "Проверяет, является ли указанное значение плавающим. ": {
+    "prefix": "BX.Type.isFloat",
+    "body": ["BX.Type.isFloat($value)"],
+    "description": "Проверяет, является ли указанное значение плавающим."
+  },
+  "Проверяет, равно ли указанное значение нулю.": {
+    "prefix": "BX.Type.isNil+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is nil.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is nil, false otherwise.",
+      " */",
+      "BX.Type.isNil($value)"
+    ],
+    "description": "Проверяет, равно ли указанное значение нулю."
+  },
+  "Проверяет, равно ли указанное значение нулю. ": {
+    "prefix": "BX.Type.isNil",
+    "body": ["BX.Type.isNil($value)"],
+    "description": "Проверяет, равно ли указанное значение нулю."
+  },
+  "Проверяет, является ли указанное значение заполненным массивом.": {
+    "prefix": "BX.Type.isArrayFilled+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is an array filled.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is an array filled, false otherwise.",
+      " */",
+      "BX.Type.isArrayFilled($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение заполненным массивом."
+  },
+  "Проверяет, является ли указанное значение заполненным массивом. ": {
+    "prefix": "BX.Type.isArrayFilled",
+    "body": ["BX.Type.isArrayFilled($value)"],
+    "description": "Проверяет, является ли указанное значение заполненным массивом."
+  },
+  "Проверяет, является ли предоставленное значение похожим на массив.": {
+    "prefix": "BX.Type.isArrayLike+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is an array-like.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is an array-like, false otherwise.",
+      " */",
+      "BX.Type.isArrayLike($value)"
+    ],
+    "description": "Проверяет, является ли предоставленное значение похожим на массив."
+  },
+  "Проверяет, является ли предоставленное значение похожим на массив. ": {
+    "prefix": "BX.Type.isArrayLike",
+    "body": ["BX.Type.isArrayLike($value)"],
+    "description": "Проверяет, является ли предоставленное значение похожим на массив."
+  },
+  "Проверяет, является ли указанное значение текстовым узлом.": {
+    "prefix": "BX.Type.isTextNode+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a text node.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a text node, false otherwise.",
+      " */",
+      "BX.Type.isTextNode($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение текстовым узлом."
+  },
+  "Проверяет, является ли указанное значение текстовым узлом. ": {
+    "prefix": "BX.Type.isTextNode",
+    "body": ["BX.Type.isTextNode($value)"],
+    "description": "Проверяет, является ли указанное значение текстовым узлом."
+  },
+  "Проверяет, является ли значение - Map.": {
+    "prefix": "BX.Type.isMap+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a map.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a map, false otherwise.",
+      " */",
+      "BX.Type.isMap($value)"
+    ],
+    "description": "Проверяет, является ли значение - Map."
+  },
+  "Проверяет, является ли значение - Map. ": {
+    "prefix": "BX.Type.isMap",
+    "body": ["BX.Type.isMap($value)"],
+    "description": "Проверяет, является ли значение - Map."
+  },
+  "Проверяет, является ли указанное значение - Set.": {
+    "prefix": "BX.Type.isSet+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a set.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a set, false otherwise.",
+      " */",
+      "BX.Type.isSet($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение - Set."
+  },
+  "Проверяет, является ли указанное значение - Set. ": {
+    "prefix": "BX.Type.isSet",
+    "body": ["BX.Type.isSet($value)"],
+    "description": "Проверяет, является ли указанное значение - Set."
+  },
+  "Проверяет, является ли указанное значение - weakMap.": {
+    "prefix": "BX.Type.isWeakMap+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a weak map.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a weak map, false otherwise.",
+      " */",
+      "BX.Type.isWeakMap($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение - weakMap."
+  },
+  "Проверяет, является ли указанное значение - weakMap. ": {
+    "prefix": "BX.Type.isWeakMap",
+    "body": ["BX.Type.isWeakMap($value)"],
+    "description": "Проверяет, является ли указанное значение - weakMap."
+  },
+  "Проверяет, является ли указанное значение - weakSet.": {
+    "prefix": "BX.Type.isWeakSet+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a weak set.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a weak set, false otherwise.",
+      " */",
+      "BX.Type.isWeakSet($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение - weakSet."
+  },
+  "Проверяет, является ли указанное значение - weakSet. ": {
+    "prefix": "BX.Type.isWeakSet",
+    "body": ["BX.Type.isWeakSet($value)"],
+    "description": "Проверяет, является ли указанное значение - weakSet."
+  },
+  "Проверяет, является ли предоставленное значение прототипом.": {
+    "prefix": "BX.Type.isPrototype+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a prototype.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a prototype, false otherwise.",
+      " */",
+      "BX.Type.isPrototype($value)"
+    ],
+    "description": "Проверяет, является ли предоставленное значение прототипом."
+  },
+  "Проверяет, является ли предоставленное значение прототипом. ": {
+    "prefix": "BX.Type.isPrototype",
+    "body": ["BX.Type.isPrototype($value)"],
+    "description": "Проверяет, является ли предоставленное значение прототипом."
+  },
+  "Проверяет, является ли указанное значение регулярным выражением.": {
+    "prefix": "BX.Type.isRegExp+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a regular expression.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a regular expression, false otherwise.",
+      " */",
+      "BX.Type.isRegExp($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение регулярным выражением."
+  },
+  "Проверяет, является ли указанное значение регулярным выражением. ": {
+    "prefix": "BX.Type.isRegExp",
+    "body": ["BX.Type.isRegExp($value)"],
+    "description": "Проверяет, является ли указанное значение регулярным выражением."
+  },
+  "Проверяет, является ли указанное значение Null.": {
+    "prefix": "BX.Type.isNull+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is null.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is null, false otherwise.",
+      " */",
+      "BX.Type.isNull($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение Null."
+  },
+  "Проверяет, является ли указанное значение Null. ": {
+    "prefix": "BX.Type.isNull",
+    "body": ["BX.Type.isNull($value)"],
+    "description": "Проверяет, является ли указанное значение Null."
+  },
+  "Проверяет, является ли указанное значение undefined.": {
+    "prefix": "BX.Type.isUndefined+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is undefined.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is undefined, false otherwise.",
+      " */",
+      "BX.Type.isUndefined($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение undefined."
+  },
+  "Проверяет, является ли указанное значение undefined. ": {
+    "prefix": "BX.Type.isUndefined",
+    "body": ["BX.Type.isUndefined($value)"],
+    "description": "Проверяет, является ли указанное значение undefined."
+  },
+  "Проверяет, является ли указанное значение arrayBuffer.": {
+    "prefix": "BX.Type.isArrayBuffer+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is an array buffer.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is an array buffer, false otherwise.",
+      " */",
+      "BX.Type.isArrayBuffer($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение arrayBuffer."
+  },
+  "Проверяет, является ли указанное значение arrayBuffer. ": {
+    "prefix": "BX.Type.isArrayBuffer",
+    "body": ["BX.Type.isArrayBuffer($value)"],
+    "description": "Проверяет, является ли указанное значение arrayBuffer."
+  },
+  "Проверяет, является ли указанное значение - blob.": {
+    "prefix": "BX.Type.isBlob+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a blob.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a blob, false otherwise.",
+      " */",
+      "BX.Type.isBlob($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение - blob."
+  },
+  "Проверяет, является ли указанное значение - blob. ": {
+    "prefix": "BX.Type.isBlob",
+    "body": ["BX.Type.isBlob($value)"],
+    "description": "Проверяет, является ли указанное значение - blob."
+  },
+  "Проверяет, является ли указанное значение - файлом.": {
+    "prefix": "BX.Type.isFile+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a file.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a file, false otherwise.",
+      " */",
+      "BX.Type.isFile($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение - файлом."
+  },
+  "Проверяет, является ли указанное значение - файлом. ": {
+    "prefix": "BX.Type.isFile",
+    "body": ["BX.Type.isFile($value)"],
+    "description": "Проверяет, является ли указанное значение - файлом."
+  },
+  "Проверяет, является ли указанное значение - FormData.": {
+    "prefix": "BX.Type.isFormData+",
+    "body": [
+      "/**",
+      " * Checks if the provided value is a form data.",
+      " *",
+      " * @param {*} value The value to check.",
+      " * @returns {boolean} True if the value is a form data, false otherwise.",
+      " */",
+      "BX.Type.isFormData($value)"
+    ],
+    "description": "Проверяет, является ли указанное значение - FormData."
+  },
+  "Проверяет, является ли указанное значение - FormData. ": {
+    "prefix": "BX.Type.isFormData",
+    "body": ["BX.Type.isFormData($value)"],
+    "description": "Проверяет, является ли указанное значение - FormData."
+  },
+  "Настраивает узел DOM, применяя предоставленные свойства, стиль, события, атрибуты, дочерние элементы, текст или HTML.": {
+    "prefix": "BX.adjust+",
+    "body": [
+      "/**",
+      " * Adjusts a DOMNode by applying the provided properties, style, events, attributes, children, text, or HTML.",
+      " *",
+      " * @param {HTMLElement} node - The DOMNode to be adjusted.",
+      " * @param {Object} options - An object containing the following properties:",
+      " * @param {HTMLElement} [options.node] - The node to be adjusted. Defaults to the provided DOMNode.",
+      " * @param {Object} [options.props] - An object containing properties to be applied to the node.",
+      " * @param {Object} [options.style] - An object containing style properties to be applied to the node.",
+      " * @param {Object} [options.events] - An object containing event listeners to be added to the node.",
+      " * @param {Object} [options.attrs] - An object containing attributes to be applied to the node.",
+      " * @param {Array<HTMLElement>} [options.children] - An array of child nodes to be added to the node.",
+      " * @param {String} [options.text] - The text content to be set on the node.",
+      " * @param {String} [options.html] - The HTML content to be set on the node.",
+      " *",
+      " * @returns {DOMNode} The adjusted DOMNode.",
+      " */",
+      "BX.adjust($node, $options)"
+    ],
+    "description": "Настраивает узел DOM, применяя предоставленные свойства, стиль, события, атрибуты, дочерние элементы, текст или HTML."
+  },
+  "Настраивает узел DOM, применяя предоставленные свойства, стиль, события, атрибуты, дочерние элементы, текст или HTML. ": {
+    "prefix": "BX.adjust",
+    "body": ["BX.adjust($node, $options)"],
+    "description": "Настраивает узел DOM, применяя предоставленные свойства, стиль, события, атрибуты, дочерние элементы, текст или HTML."
+  },
+  "Находит дочерний узел указанного DOM-узла на основе предоставленных параметров.": {
+    "prefix": "BX.findChild+",
+    "body": [
+      "/**",
+      " * Finds a child node of the specified DOMNode based on the provided parameters.",
+      " *",
+      " * @param {HTMLElement} node - The parent DOMNode to search for a child node.",
+      " * @param {Object} [params] - An optional object containing parameters to filter the child nodes.",
+      " * @param {string} [params.tagName] - The tag name of the desired child node.",
+      " * @param {string} [params.className] - The class name of the desired child node.",
+      " * @param {Object} [params.attribute] - An object containing attribute key-value pairs to filter the child nodes.",
+      " * @param {Object} [params.property] - An object containing property key-value pairs to filter the child nodes.",
+      " * @param {boolean} [recursive=false] - A boolean value indicating whether to search recursively through child nodes.",
+      " * @param {boolean} [get_all=false] - A boolean value indicating whether to return all matching child nodes or just the first one.",
+      " * @returns {HTMLElement|Array<HTMLElement>} - The found child node or an array of all matching child nodes.",
+      " */",
+      "BX.findChild($node, $params, $recursive $get_all)"
+    ],
+    "description": "Находит дочерний узел указанного DOM-узла на основе предоставленных параметров."
+  },
+  "Находит дочерний узел указанного DOM-узла на основе предоставленных параметров. ": {
+    "prefix": "BX.findChild",
+    "body": ["BX.findChild($node, $params, $recursive $get_all)"],
+    "description": "Находит дочерний узел указанного DOM-узла на основе предоставленных параметров."
+  },
+  "Находит дочерние узлы указанного DOM-узла на основе предоставленных параметров.": {
+    "prefix": "BX.findChildren+",
+    "body": [
+      "/**",
+      " * Finds all direct child nodes of the specified DOMNode.",
+      " *",
+      " * @param {HTMLElement} node - The DOMNode to search for children.",
+      " * @param {Object} [params] - An optional object containing parameters to filter the child nodes.\",",
+      " * @param {string} [params.tagName] - The tag name of the desired child node.\",",
+      " * @param {string} [params.className] - The class name of the desired child node.\",",
+      " * @param {Object} [params.attribute] - An object containing attribute key-value pairs to filter the child nodes.\",",
+      " * @param {Object} [params.property] - An object containing property key-value pairs to filter the child nodes.\",",
+      " * @param {boolean} [recursive=false] - If true, also search for children of the children.",
+      " * @returns {array<HTMLElement>} - An array of all direct child nodes.",
+      " */",
+      "BX.findChildren($node, $params, $recursive)"
+    ],
+    "description": "Находит дочерние узлы указанного DOM-узла на основе предоставленных параметров."
+  },
+  "Находит дочерние узлы указанного DOM-узла на основе предоставленных параметров. ": {
+    "prefix": "BX.findChildren",
+    "body": ["BX.findChildren($node, $params, $recursive)"],
+    "description": "Находит дочерние узлы указанного DOM-узла на основе предоставленных параметров."
+  },
+  "Находит родительский элемент данного узла.": {
+    "prefix": "BX.findParent+",
+    "body": [
+      "/**",
+      " * Finds the parent element of the given node.",
+      " *",
+      " * @param {HTMLElement} node - The child element to find the parent of.",
+      " * @param {?Object} [params] - Optional parameters to filter the parent.",
+      " * @param {string} [params.tagName] - The desired tag name of the parent.",
+      " * @param {string} [params.className] - The desired class name of the parent.",
+      " * @param {Object} [params.attribute] - An object containing desired attributes of the parent.",
+      " * @param {Object} [params.property] - An object containing desired properties of the parent.",
+      " * @returns {HTMLElement} - The parent element that matches the given parameters, or the first parent if no parameters are provided.",
+      " */",
+      "BX.findParent($node, $params)"
+    ],
+    "description": "Находит родительский элемент данного узла."
+  },
+  "Находит родительский элемент данного узла. ": {
+    "prefix": "BX.findParent",
+    "body": ["BX.findParent($node, $params)"],
+    "description": "Находит родительский элемент данного узла."
+  },
+  "Находит следующий ближайший элемент данного узла": {
+    "prefix": "BX.findNextSibling+",
+    "body": [
+      "/**",
+      " * Finds the next sibling element of the given node.",
+      " *",
+      " * @param {HTMLElement} node - The node to find the next sibling of.",
+      " * @param {?Object} [params] - Optional parameters for customizing the search.",
+      " * @param {string} [params.tagName] - The tag name of the desired sibling element.",
+      " * @param {string} [params.className] - The class name of the desired sibling element.",
+      " * @param {Object} [params.attribute] - An object containing key-value pairs of attribute-value pairs to match.",
+      " * @param {Object} [params.property] - An object containing key-value pairs of property-value pairs to match.",
+      " * @returns {HTMLElement} - The next sibling element that matches the given criteria, or null if no match is found.",
+      " */",
+      "BX.findNextSibling($node, $params)"
+    ],
+    "description": "Находит следующий ближайший элемент данного узла"
+  },
+  "Находит следующий ближайший элемент данного узла ": {
+    "prefix": "BX.findNextSibling",
+    "body": ["BX.findNextSibling($node, $params)"],
+    "description": "Находит следующий ближайший элемент данного узла"
+  },
+  "Находит предыдущий ближайший элемент данного узла": {
+    "prefix": "BX.findPreviousSibling+",
+    "body": [
+      "/**",
+      " * Finds the next sibling element of the given node.",
+      " *",
+      " * @param {HTMLElement} node - The node to find the next sibling of.",
+      " * @param {?Object} [params] - Optional parameters for customizing the search.",
+      " * @param {string} [params.tagName] - The tag name of the desired sibling element.",
+      " * @param {string} [params.className] - The class name of the desired sibling element.",
+      " * @param {Object} [params.attribute] - An object containing key-value pairs of attribute-value pairs to match.",
+      " * @param {Object} [params.property] - An object containing key-value pairs of property-value pairs to match.",
+      " * @returns {HTMLElement} - The next sibling element that matches the given criteria, or null if no match is found.",
+      " */",
+      "BX.findPreviousSibling($node, $params)"
+    ],
+    "description": "Находит предыдущий ближайший элемент данного узла"
+  },
+  "Находит предыдущий ближайший элемент данного узла ": {
+    "prefix": "BX.findPreviousSibling",
+    "body": ["BX.findPreviousSibling($node, $params)"],
+    "description": "Находит предыдущий ближайший элемент данного узла"
+  },
+  "Функция переключает наличие/отсутствие CSS-класса className у узла node или производит ротацию CSS-классов, если className – массив.": {
+    "prefix": "BX.toggleClass+",
+    "body": [
+      "/**",
+      " * Switches the specified class(s) in this node.",
+      " *",
+      " * @param {HTMLElement} node - node to which the class(s) will be switched.",
+      " * @param {string|Array<String>} className - the class(s) that need to be switched. If an array is specified, 1 class will be replaced by 2.",
+      " * @returns {void} - This method does not return any value.",
+      "*/",
+      "BX.toggleClass($node, $className)"
+    ],
+    "description": "Функция переключает наличие/отсутствие CSS-класса className у узла node или производит ротацию CSS-классов, если className – массив."
+  },
+  "Функция переключает наличие/отсутствие CSS-класса className у узла node или производит ротацию CSS-классов, если className – массив. ": {
+    "prefix": "BX.toggleClass",
+    "body": ["BX.toggleClass($node, $className)"],
+    "description": "Функция переключает наличие/отсутствие CSS-класса className у узла node или производит ротацию CSS-классов, если className – массив."
+  },
+  "Вставляет указанный узел после указанного узла.": {
+    "prefix": "BX.insertAfter+",
+    "body": [
+      "/**",
+      " * Inserts the specified node after the specified destination node.",
+      " *",
+      " * @param {HTMLElement} node - The node to be inserted.",
+      " * @param {HTMLElement} dstNode - The node after which the specified node should be inserted.",
+      " */",
+      "BX.insertAfter($node, $dstNode)"
+    ],
+    "description": "Вставляет указанный узел после указанного узла"
+  },
+  "Вставляет указанный узел после указанного узла. ": {
+    "prefix": "BX.insertAfter",
+    "body": ["BX.insertAfter($node, $dstNode)"],
+    "description": "Вставляет указанный узел после указанного узла"
+  },
+  "Вставляет указанный узел в начало указанного узла.": {
+    "prefix": "BX.prepend+",
+    "body": [
+      "/**",
+      " * Prepends the specified node to the destination node.",
+      " *",
+      " * @param {HTMLElement} node - The node to be prepended.",
+      " * @param {HTMLElement} dstNode - The destination node where the node will be prepended.",
+      " */",
+      "BX.prepend($node, $dstNode)"
+    ],
+    "description": "Вставляет указанный узел в начало указанного узла"
+  },
+  "Вставляет указанный узел в начало указанного узла. ": {
+    "prefix": "BX.prepend",
+    "body": ["BX.prepend($node, $dstNode)"],
+    "description": "Вставляет указанный узел в начало указанного узла"
+  },
+  "Вставляет указанный узел в конец указанного узла.": {
+    "prefix": "BX.append+",
+    "body": [
+      "/**",
+      " * Appends a node to the end of another node.",
+      " *",
+      " * @param {HTMLElement} node - The node to be appended.",
+      " * @param {HTMLElement} dstNode - The destination node where the node will be appended.",
+      " */",
+      "BX.append($node, $dstNode)"
+    ],
+    "description": "Вставляет указанный узел в конец указанного узла"
+  },
+  "Вставляет указанный узел в конец указанного узла. ": {
+    "prefix": "BX.append",
+    "body": ["BX.append($node, $dstNode)"],
+    "description": "Вставляет указанный узел в конец указанного узла"
+  },
+  "Вставляет указанный узел перед указанным целевым узлом.": {
+    "prefix": "BX.insertBefore+",
+    "body": [
+      "/**",
+      " * Inserts the specified node before the specified destination node.",
+      " *",
+      " * @param {HTMLElement} node - The node to be inserted.",
+      " * @param {HTMLElement} dstNode - The node before which the specified node will be inserted.",
+      " */",
+      "BX.insertBefore($node, $dstNode)"
+    ],
+    "description": "Вставляет указанный узел перед указанным целевым узлом."
+  },
+  "Вставляет указанный узел перед указанным целевым узлом. ": {
+    "prefix": "BX.insertBefore",
+    "body": ["BX.insertBefore($node, $dstNode)"],
+    "description": "Вставляет указанный узел перед указанным целевым узлом."
+  },
+  "Функция обеспечивает доступ к языковым сообщениям.": {
+    "prefix": "BX.message+",
+    "body": [
+      "/**",
+      " * Function provides access to language messages. ",
+      " * If the param parameter is a string, the language message with the identifier param will be returned. ",
+      " * Otherwise, the parameter is interpreted as an object of the form {identifier: message, identifier: message}; ",
+      " * language messages are added to the current ones (overwriting existing ones).",
+      " *",
+      " * @param {string|Object} param - The identifier or an object of language messages.",
+      " * @returns {string} - The language message with the given identifier.",
+      " * @example <caption>",
+      " *",
+      " * BX.message({test: 123}) //returns undefined",
+      " *",
+      " * BX.message('test') //returns 123",
+      " * </caption>",
+      " */",
+      "BX.message($param)"
+    ],
+    "description": "Функция обеспечивает доступ к языковым сообщениям."
+  },
+  "Функция обеспечивает доступ к языковым сообщениям. ": {
+    "prefix": "BX.message",
+    "body": ["BX.message($param)"],
+    "description": "Функция обеспечивает доступ к языковым сообщениям."
   }
-  
 }
