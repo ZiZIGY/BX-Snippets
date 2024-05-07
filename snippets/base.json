@@ -10,7 +10,7 @@
       "    * @param {string} [params.mode] - The mode for the request. Can be either \"class\" or \"ajax\".",
       "    * @param {string} [params.method] - default POST",
       "    * @param {Object|FormData} [params.data] - The data for the request.",
-      "    * @param {boolean} [params.json] - A flag indicating whether to send JSON data. In this case, when the request is sent, the Content-Type header",
+      "    * @param {boolean} [params.json] - A flag indicating whether to send JSON data. In this case, when the request is sent, the Content-type header",
       "    * will be set to application/json, and the controllers will be able to access the original JSON, which will make it easier to work with numbers and empty values.",
       "    * @param {Object} [params.navigation] - The navigation data for the request.",
       "    * @param {string|Object} [params.analyticsLabel] - The analytics label for the request. It is used as a marker for analytics to indicate popular content.",
@@ -825,7 +825,7 @@
     "description": "Является ли аргумент экземпляром класса Date."
   },
   "Является ли аргумент заполненной строкой.": {
-    "prefix": "BX.Type.isStringFilled+",
+    "prefix": "BX.type.isStringFilled+",
     "body": [
       "/**",
       " * Checks if the provided value is a filled string.",
@@ -833,17 +833,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a filled string, false otherwise.",
       " */",
-      "BX.Type.isStringFilled($value)"
+      "BX.type.isStringFilled($value)"
     ],
     "description": "Является ли аргумент заполненной строкой."
   },
   "Является ли аргумент заполненной строкой. ": {
-    "prefix": "BX.Type.isStringFilled",
-    "body": ["BX.Type.isStringFilled($value)"],
+    "prefix": "BX.type.isStringFilled",
+    "body": ["BX.type.isStringFilled($value)"],
     "description": "Является ли аргумент заполненной строкой."
   },
   "Является ли аргумент объектом.": {
-    "prefix": "BX.Type.isObject+",
+    "prefix": "BX.type.isObject+",
     "body": [
       "/**",
       " * Checks if the provided value is an object.",
@@ -851,17 +851,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is an object, false otherwise.",
       " */",
-      "BX.Type.isObject($value)"
+      "BX.type.isObject($value)"
     ],
     "description": "Является ли аргумент объектом."
   },
   "Является ли аргумент объектом. ": {
-    "prefix": "BX.Type.isObject",
-    "body": ["BX.Type.isObject($value)"],
+    "prefix": "BX.type.isObject",
+    "body": ["BX.type.isObject($value)"],
     "description": "Является ли аргумент объектом."
   },
   "Проверяет, является ли предоставленное значение объектно-подобным.": {
-    "prefix": "BX.Type.isObject+",
+    "prefix": "BX.type.isObject+",
     "body": [
       "/**",
       " * Checks if the provided value is an object.",
@@ -869,17 +869,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is an object, false otherwise.",
       " */",
-      "BX.Type.isObject($value)"
+      "BX.type.isObject($value)"
     ],
     "description": "Проверяет, является ли предоставленное значение объектно-подобным."
   },
   "Проверяет, является ли предоставленное значение объектно-подобным. ": {
-    "prefix": "BX.Type.isObject",
-    "body": ["BX.Type.isObject($value)"],
+    "prefix": "BX.type.isObject",
+    "body": ["BX.type.isObject($value)"],
     "description": "Проверяет, является ли предоставленное значение объектно-подобным."
   },
   "Проверяет, является ли предоставленное значение простым объектом.": {
-    "prefix": "BX.Type.isPlainObject+",
+    "prefix": "BX.type.isPlainObject+",
     "body": [
       "/**",
       " * Checks if the provided value is a plain object.",
@@ -887,17 +887,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a plain object, false otherwise.",
       " */",
-      "BX.Type.isPlainObject($value)"
+      "BX.type.isPlainObject($value)"
     ],
     "description": "Проверяет, является ли предоставленное значение простым объектом."
   },
   "Проверяет, является ли предоставленное значение простым объектом. ": {
-    "prefix": "BX.Type.isPlainObject",
-    "body": ["BX.Type.isPlainObject($value)"],
+    "prefix": "BX.type.isPlainObject",
+    "body": ["BX.type.isPlainObject($value)"],
     "description": "Проверяет, является ли предоставленное значение простым объектом."
   },
   "Проверяет, является ли указанное значение целым числом.": {
-    "prefix": "BX.Type.isInteger+",
+    "prefix": "BX.type.isInteger+",
     "body": [
       "/**",
       " * Checks if the provided value is an integer.",
@@ -905,17 +905,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is an integer, false otherwise.",
       " */",
-      "BX.Type.isInteger($value)"
+      "BX.type.isInteger($value)"
     ],
     "description": "Проверяет, является ли указанное значение целым числом."
   },
   "Проверяет, является ли указанное значение целым числом. ": {
-    "prefix": "BX.Type.isInteger",
-    "body": ["BX.Type.isInteger($value)"],
+    "prefix": "BX.type.isInteger",
+    "body": ["BX.type.isInteger($value)"],
     "description": "Проверяет, является ли указанное значение целым числом."
   },
   "Проверяет, является ли указанное значение плавающим.": {
-    "prefix": "BX.Type.isFloat+",
+    "prefix": "BX.type.isFloat+",
     "body": [
       "/**",
       " * Checks if the provided value is a float.",
@@ -923,17 +923,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a float, false otherwise.",
       " */",
-      "BX.Type.isFloat($value)"
+      "BX.type.isFloat($value)"
     ],
     "description": "Проверяет, является ли указанное значение плавающим."
   },
   "Проверяет, является ли указанное значение плавающим. ": {
-    "prefix": "BX.Type.isFloat",
-    "body": ["BX.Type.isFloat($value)"],
+    "prefix": "BX.type.isFloat",
+    "body": ["BX.type.isFloat($value)"],
     "description": "Проверяет, является ли указанное значение плавающим."
   },
   "Проверяет, равно ли указанное значение нулю.": {
-    "prefix": "BX.Type.isNil+",
+    "prefix": "BX.type.isNil+",
     "body": [
       "/**",
       " * Checks if the provided value is nil.",
@@ -941,17 +941,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is nil, false otherwise.",
       " */",
-      "BX.Type.isNil($value)"
+      "BX.type.isNil($value)"
     ],
     "description": "Проверяет, равно ли указанное значение нулю."
   },
   "Проверяет, равно ли указанное значение нулю. ": {
-    "prefix": "BX.Type.isNil",
-    "body": ["BX.Type.isNil($value)"],
+    "prefix": "BX.type.isNil",
+    "body": ["BX.type.isNil($value)"],
     "description": "Проверяет, равно ли указанное значение нулю."
   },
   "Проверяет, является ли указанное значение заполненным массивом.": {
-    "prefix": "BX.Type.isArrayFilled+",
+    "prefix": "BX.type.isArrayFilled+",
     "body": [
       "/**",
       " * Checks if the provided value is an array filled.",
@@ -959,17 +959,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is an array filled, false otherwise.",
       " */",
-      "BX.Type.isArrayFilled($value)"
+      "BX.type.isArrayFilled($value)"
     ],
     "description": "Проверяет, является ли указанное значение заполненным массивом."
   },
   "Проверяет, является ли указанное значение заполненным массивом. ": {
-    "prefix": "BX.Type.isArrayFilled",
-    "body": ["BX.Type.isArrayFilled($value)"],
+    "prefix": "BX.type.isArrayFilled",
+    "body": ["BX.type.isArrayFilled($value)"],
     "description": "Проверяет, является ли указанное значение заполненным массивом."
   },
   "Проверяет, является ли предоставленное значение похожим на массив.": {
-    "prefix": "BX.Type.isArrayLike+",
+    "prefix": "BX.type.isArrayLike+",
     "body": [
       "/**",
       " * Checks if the provided value is an array-like.",
@@ -977,17 +977,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is an array-like, false otherwise.",
       " */",
-      "BX.Type.isArrayLike($value)"
+      "BX.type.isArrayLike($value)"
     ],
     "description": "Проверяет, является ли предоставленное значение похожим на массив."
   },
   "Проверяет, является ли предоставленное значение похожим на массив. ": {
-    "prefix": "BX.Type.isArrayLike",
-    "body": ["BX.Type.isArrayLike($value)"],
+    "prefix": "BX.type.isArrayLike",
+    "body": ["BX.type.isArrayLike($value)"],
     "description": "Проверяет, является ли предоставленное значение похожим на массив."
   },
   "Проверяет, является ли указанное значение текстовым узлом.": {
-    "prefix": "BX.Type.isTextNode+",
+    "prefix": "BX.type.isTextNode+",
     "body": [
       "/**",
       " * Checks if the provided value is a text node.",
@@ -995,17 +995,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a text node, false otherwise.",
       " */",
-      "BX.Type.isTextNode($value)"
+      "BX.type.isTextNode($value)"
     ],
     "description": "Проверяет, является ли указанное значение текстовым узлом."
   },
   "Проверяет, является ли указанное значение текстовым узлом. ": {
-    "prefix": "BX.Type.isTextNode",
-    "body": ["BX.Type.isTextNode($value)"],
+    "prefix": "BX.type.isTextNode",
+    "body": ["BX.type.isTextNode($value)"],
     "description": "Проверяет, является ли указанное значение текстовым узлом."
   },
   "Проверяет, является ли значение - Map.": {
-    "prefix": "BX.Type.isMap+",
+    "prefix": "BX.type.isMap+",
     "body": [
       "/**",
       " * Checks if the provided value is a map.",
@@ -1013,17 +1013,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a map, false otherwise.",
       " */",
-      "BX.Type.isMap($value)"
+      "BX.type.isMap($value)"
     ],
     "description": "Проверяет, является ли значение - Map."
   },
   "Проверяет, является ли значение - Map. ": {
-    "prefix": "BX.Type.isMap",
-    "body": ["BX.Type.isMap($value)"],
+    "prefix": "BX.type.isMap",
+    "body": ["BX.type.isMap($value)"],
     "description": "Проверяет, является ли значение - Map."
   },
   "Проверяет, является ли указанное значение - Set.": {
-    "prefix": "BX.Type.isSet+",
+    "prefix": "BX.type.isSet+",
     "body": [
       "/**",
       " * Checks if the provided value is a set.",
@@ -1031,17 +1031,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a set, false otherwise.",
       " */",
-      "BX.Type.isSet($value)"
+      "BX.type.isSet($value)"
     ],
     "description": "Проверяет, является ли указанное значение - Set."
   },
   "Проверяет, является ли указанное значение - Set. ": {
-    "prefix": "BX.Type.isSet",
-    "body": ["BX.Type.isSet($value)"],
+    "prefix": "BX.type.isSet",
+    "body": ["BX.type.isSet($value)"],
     "description": "Проверяет, является ли указанное значение - Set."
   },
   "Проверяет, является ли указанное значение - weakMap.": {
-    "prefix": "BX.Type.isWeakMap+",
+    "prefix": "BX.type.isWeakMap+",
     "body": [
       "/**",
       " * Checks if the provided value is a weak map.",
@@ -1049,17 +1049,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a weak map, false otherwise.",
       " */",
-      "BX.Type.isWeakMap($value)"
+      "BX.type.isWeakMap($value)"
     ],
     "description": "Проверяет, является ли указанное значение - weakMap."
   },
   "Проверяет, является ли указанное значение - weakMap. ": {
-    "prefix": "BX.Type.isWeakMap",
-    "body": ["BX.Type.isWeakMap($value)"],
+    "prefix": "BX.type.isWeakMap",
+    "body": ["BX.type.isWeakMap($value)"],
     "description": "Проверяет, является ли указанное значение - weakMap."
   },
   "Проверяет, является ли указанное значение - weakSet.": {
-    "prefix": "BX.Type.isWeakSet+",
+    "prefix": "BX.type.isWeakSet+",
     "body": [
       "/**",
       " * Checks if the provided value is a weak set.",
@@ -1067,17 +1067,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a weak set, false otherwise.",
       " */",
-      "BX.Type.isWeakSet($value)"
+      "BX.type.isWeakSet($value)"
     ],
     "description": "Проверяет, является ли указанное значение - weakSet."
   },
   "Проверяет, является ли указанное значение - weakSet. ": {
-    "prefix": "BX.Type.isWeakSet",
-    "body": ["BX.Type.isWeakSet($value)"],
+    "prefix": "BX.type.isWeakSet",
+    "body": ["BX.type.isWeakSet($value)"],
     "description": "Проверяет, является ли указанное значение - weakSet."
   },
   "Проверяет, является ли предоставленное значение прототипом.": {
-    "prefix": "BX.Type.isPrototype+",
+    "prefix": "BX.type.isPrototype+",
     "body": [
       "/**",
       " * Checks if the provided value is a prototype.",
@@ -1085,17 +1085,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a prototype, false otherwise.",
       " */",
-      "BX.Type.isPrototype($value)"
+      "BX.type.isPrototype($value)"
     ],
     "description": "Проверяет, является ли предоставленное значение прототипом."
   },
   "Проверяет, является ли предоставленное значение прототипом. ": {
-    "prefix": "BX.Type.isPrototype",
-    "body": ["BX.Type.isPrototype($value)"],
+    "prefix": "BX.type.isPrototype",
+    "body": ["BX.type.isPrototype($value)"],
     "description": "Проверяет, является ли предоставленное значение прототипом."
   },
   "Проверяет, является ли указанное значение регулярным выражением.": {
-    "prefix": "BX.Type.isRegExp+",
+    "prefix": "BX.type.isRegExp+",
     "body": [
       "/**",
       " * Checks if the provided value is a regular expression.",
@@ -1103,17 +1103,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a regular expression, false otherwise.",
       " */",
-      "BX.Type.isRegExp($value)"
+      "BX.type.isRegExp($value)"
     ],
     "description": "Проверяет, является ли указанное значение регулярным выражением."
   },
   "Проверяет, является ли указанное значение регулярным выражением. ": {
-    "prefix": "BX.Type.isRegExp",
-    "body": ["BX.Type.isRegExp($value)"],
+    "prefix": "BX.type.isRegExp",
+    "body": ["BX.type.isRegExp($value)"],
     "description": "Проверяет, является ли указанное значение регулярным выражением."
   },
   "Проверяет, является ли указанное значение Null.": {
-    "prefix": "BX.Type.isNull+",
+    "prefix": "BX.type.isNull+",
     "body": [
       "/**",
       " * Checks if the provided value is null.",
@@ -1121,17 +1121,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is null, false otherwise.",
       " */",
-      "BX.Type.isNull($value)"
+      "BX.type.isNull($value)"
     ],
     "description": "Проверяет, является ли указанное значение Null."
   },
   "Проверяет, является ли указанное значение Null. ": {
-    "prefix": "BX.Type.isNull",
-    "body": ["BX.Type.isNull($value)"],
+    "prefix": "BX.type.isNull",
+    "body": ["BX.type.isNull($value)"],
     "description": "Проверяет, является ли указанное значение Null."
   },
   "Проверяет, является ли указанное значение undefined.": {
-    "prefix": "BX.Type.isUndefined+",
+    "prefix": "BX.type.isUndefined+",
     "body": [
       "/**",
       " * Checks if the provided value is undefined.",
@@ -1139,17 +1139,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is undefined, false otherwise.",
       " */",
-      "BX.Type.isUndefined($value)"
+      "BX.type.isUndefined($value)"
     ],
     "description": "Проверяет, является ли указанное значение undefined."
   },
   "Проверяет, является ли указанное значение undefined. ": {
-    "prefix": "BX.Type.isUndefined",
-    "body": ["BX.Type.isUndefined($value)"],
+    "prefix": "BX.type.isUndefined",
+    "body": ["BX.type.isUndefined($value)"],
     "description": "Проверяет, является ли указанное значение undefined."
   },
   "Проверяет, является ли указанное значение arrayBuffer.": {
-    "prefix": "BX.Type.isArrayBuffer+",
+    "prefix": "BX.type.isArrayBuffer+",
     "body": [
       "/**",
       " * Checks if the provided value is an array buffer.",
@@ -1157,17 +1157,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is an array buffer, false otherwise.",
       " */",
-      "BX.Type.isArrayBuffer($value)"
+      "BX.type.isArrayBuffer($value)"
     ],
     "description": "Проверяет, является ли указанное значение arrayBuffer."
   },
   "Проверяет, является ли указанное значение arrayBuffer. ": {
-    "prefix": "BX.Type.isArrayBuffer",
-    "body": ["BX.Type.isArrayBuffer($value)"],
+    "prefix": "BX.type.isArrayBuffer",
+    "body": ["BX.type.isArrayBuffer($value)"],
     "description": "Проверяет, является ли указанное значение arrayBuffer."
   },
   "Проверяет, является ли указанное значение - blob.": {
-    "prefix": "BX.Type.isBlob+",
+    "prefix": "BX.type.isBlob+",
     "body": [
       "/**",
       " * Checks if the provided value is a blob.",
@@ -1175,17 +1175,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a blob, false otherwise.",
       " */",
-      "BX.Type.isBlob($value)"
+      "BX.type.isBlob($value)"
     ],
     "description": "Проверяет, является ли указанное значение - blob."
   },
   "Проверяет, является ли указанное значение - blob. ": {
-    "prefix": "BX.Type.isBlob",
-    "body": ["BX.Type.isBlob($value)"],
+    "prefix": "BX.type.isBlob",
+    "body": ["BX.type.isBlob($value)"],
     "description": "Проверяет, является ли указанное значение - blob."
   },
   "Проверяет, является ли указанное значение - файлом.": {
-    "prefix": "BX.Type.isFile+",
+    "prefix": "BX.type.isFile+",
     "body": [
       "/**",
       " * Checks if the provided value is a file.",
@@ -1193,17 +1193,17 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a file, false otherwise.",
       " */",
-      "BX.Type.isFile($value)"
+      "BX.type.isFile($value)"
     ],
     "description": "Проверяет, является ли указанное значение - файлом."
   },
   "Проверяет, является ли указанное значение - файлом. ": {
-    "prefix": "BX.Type.isFile",
-    "body": ["BX.Type.isFile($value)"],
+    "prefix": "BX.type.isFile",
+    "body": ["BX.type.isFile($value)"],
     "description": "Проверяет, является ли указанное значение - файлом."
   },
   "Проверяет, является ли указанное значение - FormData.": {
-    "prefix": "BX.Type.isFormData+",
+    "prefix": "BX.type.isFormData+",
     "body": [
       "/**",
       " * Checks if the provided value is a form data.",
@@ -1211,13 +1211,13 @@
       " * @param {*} value The value to check.",
       " * @returns {boolean} True if the value is a form data, false otherwise.",
       " */",
-      "BX.Type.isFormData($value)"
+      "BX.type.isFormData($value)"
     ],
     "description": "Проверяет, является ли указанное значение - FormData."
   },
   "Проверяет, является ли указанное значение - FormData. ": {
-    "prefix": "BX.Type.isFormData",
-    "body": ["BX.Type.isFormData($value)"],
+    "prefix": "BX.type.isFormData",
+    "body": ["BX.type.isFormData($value)"],
     "description": "Проверяет, является ли указанное значение - FormData."
   },
   "Настраивает узел DOM, применяя предоставленные свойства, стиль, события, атрибуты, дочерние элементы, текст или HTML.": {
