@@ -7,3 +7,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 
 - Initial release
+- 1.1.0 added snippets for Dom operations and check Type variable
+- 1.1.1 Hotfix
+- 1.1.2 Added changelog LICENSE, change HTMLElement to Node and added additional snippets for DOM
